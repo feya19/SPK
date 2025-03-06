@@ -8,10 +8,10 @@ $kriteria = [
     'c5' => ['name' => 'Sistem Keamanan', 'bobot' => 0.1, 'type' => 'benefit']
 ];
 
-// Data alternatif dan skor
+// Data alternatif dan skor dengan perubahan nilai c1 dan c2
 $alternatif = [
-    'Apartemen 1' => ['c1' => 2, 'c2' => 2, 'c3' => 2, 'c4' => 1, 'c5' => 3],
-    'Apartemen 2' => ['c1' => 4, 'c2' => 1, 'c3' => 3, 'c4' => 2, 'c5' => 3],
+    'Apartemen 1' => ['c1' => 2, 'c2' => 1, 'c3' => 2, 'c4' => 1, 'c5' => 3], // c2 berubah ke 8.500.000 (skor 1)
+    'Apartemen 2' => ['c1' => 2, 'c2' => 1, 'c3' => 3, 'c4' => 2, 'c5' => 3], // c1 berubah ke 2
     'Apartemen 3' => ['c1' => 3, 'c2' => 2, 'c3' => 2, 'c4' => 3, 'c5' => 4]
 ];
 
@@ -48,13 +48,13 @@ foreach ($alternatif as $alt => $data) {
 arsort($wsm);
 arsort($wpm);
 
-echo "<h3>Hasil Perhitungan WSM:</h3><ul>";
+echo "<h3>Hasil Perhitungan WSM setelah perubahan:</h3><ul>";
 foreach ($wsm as $alt => $score) {
     echo "<li>$alt : ".number_format($score, 4)."</li>";
 }
 echo "</ul>";
 
-echo "<h3>Hasil Perhitungan WPM:</h3><ul>";
+echo "<h3>Hasil Perhitungan WPM setelah perubahan:</h3><ul>";
 foreach ($wpm as $alt => $score) {
     echo "<li>$alt : ".number_format($score, 6)."</li>";
 }
